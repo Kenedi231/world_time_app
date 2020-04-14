@@ -7,10 +7,16 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
 
+  Map data = {};
+
   void navigateToChooseLocation() => Navigator.pushNamed(context, '/location');
 
   @override
   Widget build(BuildContext context) {
+
+    data = ModalRoute.of(context).settings.arguments;
+    print(data);
+
     return Scaffold(
       body: SafeArea(
         child: Column(
